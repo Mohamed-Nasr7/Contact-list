@@ -1,0 +1,44 @@
+<main>
+  <section class="container pt-5">
+    <div>
+      <form [formGroup]="form">
+
+        <div class="form-group">
+          <div class="col-12 mb-3">
+            <input type="text" class="form-control" placeholder="First name" formControlName="fName">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-12 mb-3">
+            <input type="text" class="form-control" placeholder="Last name" formControlName="lName">
+          </div>
+        </div>
+        
+
+          <div class="form-group">
+              <div class="col-12 mb-3">
+                  <input type="text" class="form-control"  placeholder="number" formControlName="phone">
+              </div> 
+          </div>
+
+        <div class="form-group">
+          <div class="col-12 mb-3">
+              <input type="email" class="form-control" placeholder="Email" formControlName="email">
+          </div>  
+        </div>
+        
+        <div class="form-group text-center">
+            <div class="col-12 mb-3">
+                <button type="submit" [disabled]="!form.valid" (click)="add()" class="btn btn-primary form-row" >Add Contact</button>
+            </div>
+            <div class="col-12 mb-3">
+                <button class="btn btn-success form-row" type="submit" (click)="cancel()">Cancel</button>
+            </div>
+          </div>
+        
+
+      </form>
+    </div>
+  </section>
+</main>

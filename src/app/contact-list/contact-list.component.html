@@ -1,0 +1,69 @@
+<main>
+
+  <div class="container mt-4">
+
+    <div class="wrapper">
+
+
+      <!-- Search Box -->
+      <section class="row rowSt">
+        <div class="jumbotron w-100 mx-2 mt-2 mb-3">
+          
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" #inputTitle [(ngModel)]="name" class="form-control" placeholder="Search contact">
+        
+        </div>
+      </section>
+
+
+      <!-- Add new contact -->
+      <div class="breadcrumb mx-2 addLink" routerLink="/add-contact">Add new contact <span > ➕ </span></div>
+
+
+      <!--Recent Contacts  -->
+      <section class="row">
+        <div class="breadcrumb w-100 mx-2">Recent Contacts</div>
+
+        <div *ngFor="let item of added" class="col-12">
+            <p class="ml-3">{{item.fName}} {{item.lName}}</p><hr />
+        </div>
+        
+        <div *ngFor="let recent of recents.data" class="col-12">
+          <p class="ml-3">{{recent.firstName}} {{recent.lastName}}</p><hr />
+        </div>
+      </section>
+
+
+
+      <!-- All Contacts -->
+      <section class="row">
+      
+        <article class="col-11 cont">
+
+          <div *ngFor="let letter of alphabets; let id = index" id={{id}}>
+            
+            <div class="contacts clearfix" *ngFor="let cont of contacts.data | menuFilter: letter | searchFilter: name; let i = index">
+              <p class="breadcrumb" *ngIf="i==0">{{letter}}</p>
+
+              <div class="img mr-2"><img alt="img"></div>
+              <div class="ml-3">
+                  <p class="m-0 text-nowrap">{{cont.firstName}} {{cont.lastName}}</p>
+                  <p class="m-0 font-weight-light text-nowrap">{{cont.email}}</p>
+              </div>
+              <hr />
+
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Aside Letters -->
+        <article class="col-1 text-center alphabets">
+            <div class="letter" *ngFor="let letter of alphabets; let id=index" (click)="scrollTo(id)">{{letter}}</div>
+        </article>
+
+      </section>
+   </div>
+  </div>
+
+</main>
