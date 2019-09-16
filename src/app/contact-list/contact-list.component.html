@@ -21,14 +21,14 @@
 
 
       <!--Recent Contacts  -->
-      <section class="row">
-        <div class="breadcrumb w-100 mx-2">Recent Contacts</div>
+      <section class="row recents">
+        <div class="breadcrumb w-100 mx-2 mt-0">Recent Contacts</div>
 
         <div *ngFor="let item of added" class="col-12">
             <p class="ml-3">{{item.fName}} {{item.lName}}</p><hr />
         </div>
         
-        <div *ngFor="let recent of recents.data" class="col-12">
+        <div *ngFor="let recent of recents.data;" class="col-12">
           <p class="ml-3">{{recent.firstName}} {{recent.lastName}}</p><hr />
         </div>
       </section>

@@ -6,7 +6,7 @@
     /* font-family: sans */
 }
 
-.rowSt{
+.row.rowSt{
 
     margin: 0;
     padding: 0
@@ -34,21 +34,43 @@
     
 }
 
+.row.recents{
+    margin-top: 0;
+    margin-bottom: 2px
+}
+
 .breadcrumb{
-    margin-top: 0
+    margin-top: 0;
+    border-radius: 0
+}
+
+.recents .breadcrumb{
+    margin-bottom: 3px
+}
+
+.recents p{
+    margin-bottom: 0
+}
+.recents hr{
+    margin: 3px
 }
 
 
 
 
+.breadcrumb.addLink{
+    margin-bottom: 0
+}
 
 .addLink{
     cursor: pointer;
+    border-bottom: 1px solid rgb(151, 150, 150)
 }
 
 .addLink span{
     display: inline-block;
-    margin-left: 20px
+    margin-left: 20px;
+    margin-bottom: 0
 }
 
 
