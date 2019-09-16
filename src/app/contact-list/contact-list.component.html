@@ -17,7 +17,10 @@
 
 
       <!-- Add new contact -->
-      <div class="breadcrumb mx-2 addLink" routerLink="/add-contact">Add new contact <span > ➕ </span></div>
+      <div class="breadcrumb mx-2 addLink clearfix" routerLink="/add-contact">
+        <div>Add new contact</div>  
+        <span><i class="fa fa-plus"></i></span>
+      </div>
 
 
       <!--Recent Contacts  -->
@@ -28,8 +31,8 @@
             <p class="ml-3">{{item.fName}} {{item.lName}}</p><hr />
         </div>
         
-        <div *ngFor="let recent of recents.data;" class="col-12">
-          <p class="ml-3">{{recent.firstName}} {{recent.lastName}}</p><hr />
+        <div *ngFor="let recent of recents.data; let i = index" class="col-12">
+          <p class="ml-3">{{recent.firstName}} {{recent.lastName}}</p><hr *ngIf="recents.data[i+1] != undefined" />
         </div>
       </section>
 
